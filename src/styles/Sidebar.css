@@ -1,0 +1,99 @@
+/* Kiểu chung cho sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;  /* Chiếm toàn bộ chiều cao */
+  width: 250px;  /* Chiều rộng mặc định của sidebar */
+  background-color: #007bff;  /* Màu nền tối cho sidebar */
+  color: white;
+  padding: 10px;
+  transition: width 0.3s ease;  /* Hiệu ứng thu gọn mượt mà */
+}
+
+.sidebar.collapsed {
+  width: 50px;  /* Độ rộng khi thu gọn */
+}
+
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.history-text {
+  margin-left: 10px;
+}
+
+.toggle-history {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  font-size: 20px;
+}
+
+.chat-history-list {
+  flex-grow: 1;  /* Danh sách chat chiếm hết chiều cao còn lại */
+  overflow-y: scroll;  /* Luôn hiển thị thanh cuộn dọc */
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;  /* Giới hạn chiều cao tối đa của danh sách chat (70% chiều cao màn hình) */
+  padding-right: 10px;  /* Giữ khoảng cách với scrollbar */
+  background-color: #007bff; /* Màu nền của danh sách chat */
+  border-radius: 4px;  /* Bo góc cho danh sách chat */
+}
+
+/* Tùy chỉnh thanh cuộn */
+.chat-history-list::-webkit-scrollbar {
+  width: 8px;  /* Độ rộng của thanh cuộn */
+}
+
+.chat-history-list::-webkit-scrollbar-thumb {
+  background-color: white;  /* Màu của thanh cuộn */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;  /* Hiệu ứng khi hover vào thanh cuộn */
+}
+
+.chat-history-list::-webkit-scrollbar-thumb:hover {
+  background-color: white;  /* Màu khi hover vào thanh cuộn */
+}
+
+.chat-item {
+  padding: 20px;
+  margin: 6px 6px;
+  border-radius: 4px;
+  overflow: hidden;
+  white-space: nowrap;  /* Cắt bớt thừa nếu văn bản dài */
+  text-overflow: ellipsis;  /* Hiển thị dấu "..." khi có văn bản bị cắt */
+  width: 100%;
+  box-sizing: border-box;
+  color: #ecf0f1;
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền khi hover */
+  
+  /* Căn giữa nội dung */
+  display: flex;
+  justify-content: center;  /* Căn giữa theo chiều ngang */
+  align-items: center;  /* Căn giữa theo chiều dọc */
+  text-align: center;  /* Đảm bảo văn bản căn giữa khi bị cắt */
+}
+
+
+/* Thêm hiệu ứng hover */
+.chat-item:hover {
+  background-color: #bbb5f8;  /* Màu nền khi di chuột vào */
+  cursor: pointer;
+}
+
+.chat-history-list.collapsed {
+  display: none;  /* Ẩn danh sách khi thu gọn */
+}
+
+.sidebar.collapsed .chat-item {
+  display: none;  /* Ẩn các mục chat khi thu gọn sidebar */
+}

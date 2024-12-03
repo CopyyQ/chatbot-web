@@ -1,0 +1,67 @@
+/* Giao diện chung */
+.App {
+  display: flex;
+  flex-direction: row;  /* Đặt sidebar và content trong cùng một hàng */
+  min-height: 100vh;
+  height: 100vh;
+  margin: 0; /* Loại bỏ margin toàn cục */
+  transition: all 0.3s ease; /* Thêm hiệu ứng chuyển cảnh cho toàn bộ app */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px; /* Đặt chiều rộng mặc định của sidebar */
+  background-color: #007bff;  /* Màu nền sidebar */
+  color: white;  /* Màu chữ trắng */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: width 0.3s ease; /* Thêm hiệu ứng chuyển cảnh cho sidebar */
+}
+
+.sidebar.collapsed {
+  width: 60px; /* Chiều rộng của sidebar khi thu nhỏ */
+}
+
+/* Main content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Cho phép main chiếm toàn bộ không gian còn lại */
+  overflow: hidden;
+  transition: margin-left 0.3s ease; /* Thêm hiệu ứng chuyển cảnh cho margin khi sidebar thay đổi */
+  margin-top: 0; /* Loại bỏ margin trên cùng */
+  padding: 0; /* Loại bỏ padding để phần tử con có thể chiếm hết không gian */
+}
+
+/* Chatbot container */
+.chatbot-container {
+  flex: 1; /* Chiếm hết không gian còn lại */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  width: 100%;  /* Đảm bảo chiếm hết chiều ngang */
+  margin: 0;  /* Loại bỏ margin */
+  box-sizing: border-box;  /* Đảm bảo không bị cắt bớt bởi padding */
+  overflow: hidden;  /* Đảm bảo không bị tràn */
+}
+
+/* Footer */
+.App-footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  height: 50px;
+  margin-top: auto;
+  transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển cảnh cho màu nền footer */
+}
+
+/* HTML và body */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100;
+  overflow: hidden;
+}

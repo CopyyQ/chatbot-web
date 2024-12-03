@@ -1,0 +1,15 @@
+/* Giao diện cho Footer */
+.App-footer {
+    background-color: #007bff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 10%;
+    bottom: 0;
+  }
+  
+  .App-footer p {
+    margin: 0;
+    color: #555;
+  }
+  

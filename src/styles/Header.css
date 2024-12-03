@@ -1,0 +1,32 @@
+/* Giao diện cho Header */
+.App-header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;  /* Giảm padding cho header */
+  height: 20px;  /* Đặt chiều cao header */
+  display: flex;
+  justify-content: space-between; /* Giữa tiêu đề và các icon */
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+}
+
+.App-header h1 {
+  font-size: 1.5rem;  /* Giảm kích thước font */
+  margin: 0;  /* Bỏ margin cho tiêu đề */
+}
+
+/* Định dạng container cho các icon */
+.icon-container {
+  display: flex;
+  gap: 20px; /* Khoảng cách giữa các icon */
+  align-items: center; /* Căn giữa các icon theo chiều dọc */
+}
+
+.icon-container svg {
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Thêm hiệu ứng khi hover vào icon */
+}
+
+.icon-container svg:hover {
+  transform: scale(1.2); /* Phóng to icon khi hover */
+}
